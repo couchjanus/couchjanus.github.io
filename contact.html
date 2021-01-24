@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peculiar Shopahlc</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- navbar-->
+    <header class="bg-white">
+        <nav id="nav">
+            <div class="navbar">
+                <input class="trigger" type="checkbox" id="hamburger">
+                <label for="hamburger">
+                    <i class="nav-toggle fas fa-bars"></i>
+                </label>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <span class="font-weight-bold text-uppercase text-dark">Shopaholic</span>
+                    </a>
+                </div>
+
+                <ul class="navbar-nav effect-brackets">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalog.html">Shop</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <ul class="navbar-tool">
+                    <li>
+                        <a href="#"><i class="fas fa-dolly-flatbed"></i><small class="text-gray">(2)</small></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="far fa-heart"></i><small class="text-gray">(0)</small></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-user-alt"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+    
+        <section class="py-5">
+            <header class="text-center">
+                <p class="text-muted text-uppercase mb-1">Get in touch</p>
+                <h2 class="h5 text-uppercase mb-4">Contact Us</h2>
+            </header>
+            
+            <div class="row">
+                <div class="col-md-4 company-info">
+                    <h3>Peculiar Shopaholic</h3>
+                    <ul>
+                        <li><i class="fa fa-road"></i> 44 Main Street</li>
+                        <li><i class="fa fa-phone"></i> (555) 555-5555</li>
+                        <li><i class="fa fa-envelope"></i> <a href="" class="email"
+                                data-cfemail="186c7d6b6c586870777d767160367b7775">[email&#160;protected]</a></li>
+                    </ul>
+                </div>
+    
+    
+                <div class="col-md-8">
+                    <table class="contact">
+                        <form id="contact-form">
+                            <tr class="table-row">
+                                <td class="table-cell half">
+                                    <label>Name</label>
+                                    <input type="text" name="name" id="name" required>
+                                </td>
+                                <td class="table-cell half">
+                                    <label>Company</label>
+                                    <input type="text" name="company" id="company">
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row">
+                                <td class="table-cell">
+                                        <label>E-mail Address</label>
+                                        <input type="email" name="email" id="email" required>
+                                </td>
+                                <td class="table-cell">
+                                        <label>Phone Number</label>
+                                        <input type="text" name="phone" id="phone">
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row">
+                                <td class="table-cell" colspan="2">
+                                    <label>Message</label>
+                                    <textarea name="message" rows="5" id="message"></textarea>
+                                </td>
+                            </tr>
+                           
+                            <tr class="table-row">
+                                <td class="table-cell" colspan="2">
+                                    <button type="submit">Submit</button>
+                                </td>
+                            </tr>
+                        </form>
+                    </table>
+
+                </div>
+
+                
+            </div>
+        </section>
+
+        <!-- NEWSLETTER-->
+        <section class="text-center border border-light p-5 my-3">
+            <!-- Subscribe -->
+            <h2 class="h4 mb-3">Let's be friends!</h2>
+            <div class="text-center border border-light p-5">
+                <form class="mb-5">
+                    <label for="from">
+                    <i class="fas fa-info-circle"></i>
+                </label>
+                    <input type="email" placeholder="Enter your email address">
+                    <input type="submit" value="Subscribe">
+                </form>
+            </div>
+            <p class="mt-3">Join our mailing list. We write rarely, but only the best content.</p>
+            <p class="my-3">
+                <a href="" target="_blank">See the last newsletter</a>
+            </p>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-3">
+        <!-- container -->
+        <div class="container py-4">
+            <!-- row -->
+            <div class="row py-5">
+                <!-- 3 columns -->
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6 class="text-uppercase">Customer services</h6>
+                    <ul class="list-unstyled">
+                        <li><a class="footer-link" href="#">Help &amp; Contact Us</a></li>
+                        <li><a class="footer-link" href="#">Returns &amp; Refunds</a></li>
+                        <li><a class="footer-link" href="#">Online Stores</a></li>
+                        <li><a class="footer-link" href="#">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6 class="text-uppercase">Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a class="footer-link" href="#">What We Do</a></li>
+                        <li><a class="footer-link" href="#">Available Services</a></li>
+                        <li><a class="footer-link" href="#">Latest Posts</a></li>
+                        <li><a class="footer-link" href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-uppercase">Social media</h6>
+                    <ul class="list-unstyled footer-socials social-icon">
+                        <li><a class="footer-link twitter" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a class="footer-link facebook" href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a class="footer-link instagram" href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a class="footer-link google-plus" href="#"><i class="fab fa-google-plus"></i> Google</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top pt-4">
+                <!-- 2 columns -->
+                <div class="row mb-4">
+                    <div class="col-lg-6">
+                        <p class="text-muted mb-0">&copy; 2020 All rights reserved.</p>
+                    </div>
+                    <div class="col-lg-6 text-lg-right">
+                        <p class="text-white reset-anchor">Template designed by <a href="#">My Temple</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>                       
+</body>
+</html>
