@@ -85,4 +85,8 @@ const categories = [
         name: "Cosmetics",
         image:"images/product-7.jpg",
     },
+    {
+        name: "Toys",
+        image:"images/product-12.jpg",
+    },
     ];

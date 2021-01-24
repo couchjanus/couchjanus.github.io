@@ -1,1 +1,3 @@
-# Java Script g21
+# My personal web site
+
+## JavaScript project
