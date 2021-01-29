@@ -311,7 +311,7 @@ function compareValues(key, order = 'asc') {
 }
 
 function fetchData(dataBase){
-    const baseUrl = `https://my-json-server.tapicode.com/couchjanus/db/${dataBase}`;
+    const baseUrl = `https://my-json-server.typicode.com/couchjanus/db/${dataBase}`;
     fetch(baseUrl)
     .then(response => response.json().then(products => saveProducts(products))).catch(err=>console.error(err));
 }
