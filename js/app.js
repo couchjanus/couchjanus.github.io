@@ -310,28 +310,27 @@ function compareValues(key, order = 'asc') {
     };
 }
 
+function fetchData(dataBase){
+    const baseUrl = `https://github.com/couchjanus/db/${dataBase}`;
+    fetch(baseUrl)
+    .then(response => response.json().then(products => saveProducts(products))).catch(err=>console.error(err));
+}
+
 document.addEventListener("DOMContentLoaded", function(){
     
     closeBtn.addEventListener("click", closeCart);
     sidebarToggle.addEventListener("click", toggleCart);
-    saveProducts(products);
+    // saveProducts(products);
+    fetchData("products");
     
-    // const mapped = getProducts().map(item => (
-    //     {
-    //         name: item.category,
-    //         image: item.image
-    //     }
-    // ));
-    // console.log(mapped);
-    // const unique = [...new Set(mapped)];
-    // console.log(unique);
     
-    const categories = [...new Set(getProducts().map(item => (
+    const categories = [...new Map(getProducts().map(item => [item['category'], item])).values()]
+    .map(item => (
         {
             name: item.category,
             image: item.image
         }
-    )))];
+    ));
 
     // console.log(categories);
 
