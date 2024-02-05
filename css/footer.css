@@ -1,0 +1,14 @@
+/* footer */
+
+.page-footer {
+    color: #eee;
+    background-color: #555;
+}
+
+.page-footer ul {
+    list-style: none;
+}
+
+.page-footer ul > li > a {
+    color: #ddd;
+}
