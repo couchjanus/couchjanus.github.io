@@ -14,12 +14,18 @@
         <a href="/index.html" class="brand">Shopaholic</a>
         <!-- navigation -->
         <nav class="navbar">
-            <a href="/index.html">Home page</a>
-            <a href="catalog.html">Catalog</a>
+            <a href="/index.html">Home</a>
+            <a href="/catalog.html">Catalog</a>
             <a href="./blog.html">Blog</a>
-            <a href="/abouit.html">About</a>
+            <a href="/about.html">About</a>
             <a href="/contact.html">Contact</a>
             
+        </nav>
+
+        <nav>
+            <a href="#" class="far fa-heart"></a>
+            <a href="#" class="fas fa-dolly-flatbed"></a>
+            <a href="#" class="far fa-user"></a>
         </nav>
     </header>
 
@@ -33,15 +39,26 @@
     </section>
     
     <!-- main content -->
-    <main>
+    <main class="">
         <div class="container">
             <header>
                 <h2>Our <span>products</span></h2>
             </header>
-           
-            <article>
-                
-            </article>
+           <div class="product-container">
+                <article class="product">
+                    <div class="icons">
+                        <a href="" class="fas fa-shopping-cart"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image"></div>
+                    <div class="content">
+                        <h3>Product name</h3>
+                        <div class="price">111</div>
+                    </div>
+                    
+                </article>
+            </div>
            
         </div>
     </main>
@@ -52,7 +69,7 @@
     <!-- page footer -->
     <footer class="page-footer">
         <div class="container">
-            <section id="footer-main">
+            <section class="footer-main">
                 <div class="footer-main-item">
                     <h3 class="footer-title">About</h3>
                     <ul>
@@ -81,13 +98,25 @@
                     </ul>
                 </div>
             </section>
+
+            <section class="footer-social">
+                <ul class="footer-social-list">
+                    <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </section>
            
             <section class="footer-ligal">
                 <ul class="footer-ligal-list">
-                    <l><a href="#">Terms &amp; Conditions</a></l>
-                    <l><a href="#">Privacy Policy</a></l>
-                    <l><a href="#">&copy; 2024 Copyright Shopaholic Inc.</a></l>
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">&copy; 2024 Copyright Shopaholic Inc.</a></li>
                 </ul>
+                
             </section>
         </div>
     </footer>
