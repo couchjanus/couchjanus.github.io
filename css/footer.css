@@ -1,25 +1,63 @@
 /* footer */
 
 .page-footer {
-    color: #eee;
-    background-color: #555;
-}
 
-.page-footer ul {
-    list-style: none;
-}
+    --footer-background-color: #555;
+    --footer-social-background-color: #333;
+    --footer-ligal-background-color: #000;
 
-.page-footer ul > li > a {
-    color: #ddd;
-}
+    --footer-a-color: #eee;
+    --footer-light-color: #fff;
+    --footer-a-font-size: .85rem;
 
-.footer-ligal {
-    background-color: #000;   
-}
-.footer-social{
-    color: #eee;
-    background-color: #333;
-}
-.footer-ligal > ul > li > a {
-    color: #fff;
+    > .footer-main {
+        background-color: var(--footer-background-color);
+        > .footer-main-item {
+            > ul > li > a {
+                color: var(--footer-a-color);
+                font-size: var(--footer-a-font-size);
+            }
+            > ul > li > a:hover {
+                color: var(--footer-light-color);
+            }
+            > ul > li > a:hover::before {
+                color: var(--footer-light-color);
+                font-weight: 900;
+                content: "\f00c";
+                font-family: 'Font Awesome 5 Free';
+                margin-right: 3px;
+            }
+            > .footer-title {
+                font-size: 1.1rem;
+                color: var(--footer-light-color);
+            }
+        }
+    }
+
+    > .footer-social {
+        background-color: var(--footer-social-background-color);
+        > .footer-social-list > li > a > i {
+            font-size: 1.25rem;
+            color: var(--footer-a-color);
+        } 
+        > .footer-social-list > li > a:hover > i {      
+            color: var(--anchor-active-color);
+        } 
+    }
+
+    > .footer-ligal {
+        background-color: var(--footer-ligal-background-color);
+        
+        > ul.footer-ligal-list {
+            > li {
+                white-space: nowrap;
+            }
+            > li > a {
+                color: var(--footer-light-color);
+            }
+            > li > a:hover {
+                color: var(--footer-a-color);
+            }
+        }
+    }
 }
