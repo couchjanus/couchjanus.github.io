@@ -1,9 +1,50 @@
 /* app.css */
 
-body {
-    color: var(--main-color);
+.svg-icon {
+    > .svg-icon-item {
+        width: 48px;
+        height: 48px;
+        vertical-align: text-bottom;
+        stroke: currentColor;
+        stroke-width: 2;
+    }
 }
 
-a {
-    color: var(--anchor-color);
+.bg-cover {
+    background-size: cover;
+}
+
+.bg-center {
+    background-position: center center;
+}
+
+.bg-fixed {
+    background-attachment: fixed;
+}
+
+.divider {
+    background: url(/images/divider-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.divider h1 {
+    font-size: 4vw;
+    font-weight: 700;
+    background: -webkit-gradient( 
+        linear, left top, right top, 
+        from(rgb(25, 76, 192)), 
+        color-stop(20%, rgb(196, 26, 3)),  
+        color-stop(40%, rgb(236, 190, 6)),  
+        color-stop(60%, rgb(25, 76, 192)),  
+        color-stop(80%, rgb(3, 116, 8)),  
+        to(rgb(196, 26, 3))); 
+        background-clip: text; 
+        -webkit-background-clip: text;  -webkit-text-fill-color: transparent;
+
 }

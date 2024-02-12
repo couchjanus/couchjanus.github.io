@@ -8,6 +8,26 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+    <svg width="0" height="0" hidden>
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="delivery-time" fill="none" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M62 46v-5l-8-7h-8"/>
+            <circle cx="24" cy="54" r="4"/>
+            <circle cx="54" cy="54" r="4"/>
+            <path d="M50 54H28m-8 0h-4v-8h46v8h-4M24.5 24H46v22m-30 0V29.8M2 38h6m-2 8h2"/>
+            <circle cx="14" cy="18" r="12"/>
+            <path d="M14 12v8h6"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="helpline-24h" fill="none" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M52.3 48.8c1.2.8 3 1.9 2.7 4.3S51 62 43 62s-17.7-6.3-26.2-14.8S2 28.9 2 21 9 9.3 10.9 9s3.6 1.5 4.3 2.7l6 9.2a4.3 4.3 0 0 1-1.1 5.8c-2.6 2.1-6.8 4.6 2.9 14.3s12.3 5.4 14.3 2.9a4.3 4.3 0 0 1 5.8-1.1z"/>
+            <path d="M54 2l-6 14h14m-4-6v12m-14 0H32l8.5-10v-.2A6 6 0 0 0 32 3.6"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="label-tag" fill="none" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M25.6 61L3 38.4 38.4 3l21.2 1.4L61 25.6 25.6 61z"/>
+            <circle cx="48" cy="15" r="4"/>
+            <path d="M31.3 21.4l11.3 11.3m-22.6 0l8.5 8.5M25.6 27l5.7 5.7"/>
+  </symbol>
+ 
+    </svg>
     <!-- page header -->
     <header class="page-header">
         <!-- brand -->
@@ -50,7 +70,9 @@
                         <a href="" class="fas fa-heart"></a>
                         <a href="" class="fas fa-eye"></a>
                     </div>
-                    <div class="image"></div>
+                    <div class="image">
+                        <img src="/images/product-6.jpg" alt="Picture for product 6" height="200">
+                    </div>
                     <div class="content">
                         <h3>Product name</h3>
                         <div class="price">111.99</div>
@@ -62,9 +84,48 @@
         </div>
     </main>
     <!-- divider -->
-    <section id="divider"></section>
+    <section id="divider" class="divider">
+        <div class="container text-right">
+            <p>New Inspiration 2024</p>
+            <h1>15% offon new season!</h1> 
+            <a href="#!" class="btn">Browse Collection</a>
+        </div>
+    </section>
     <!-- services -->
-    <section id="services"></section>
+    <section id="services">
+        <div class="container">
+            <div class="text-center">
+                <div class="svg-icon">
+                    <svg class="svg-icon-item">
+                        <use xlink:href="#delivery-time"></use>
+                    </svg>
+                    <div class="text-start">
+                        <h3>Free shipping</h3>
+                        <p>Free shipping worldwide.</p>
+                    </div>
+                </div>
+                <div class="svg-icon">
+                    <svg class="svg-icon-item">
+                        <use xlink:href="#helpline-24h"></use>
+                    </svg>
+                    <div class="text-start">
+                        <h3>Free shipping</h3>
+                        <p>Free shipping worldwide.</p>
+                    </div>
+                </div>
+                <div class="svg-icon">
+                    <svg class="svg-icon-item">
+                        <use xlink:href="#label-tag"></use>
+                    </svg>
+                    <div class="text-start">
+                        <h3>Free shipping</h3>
+                        <p>Free shipping worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
     <!-- page footer -->
     <footer class="">
         <div class="container page-footer">
