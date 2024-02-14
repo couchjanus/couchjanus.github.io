@@ -36,9 +36,16 @@
 
     > .footer-social {
         background-color: var(--footer-social-background-color);
-        > .footer-social-list > li > a > i {
-            font-size: 1.25rem;
-            color: var(--footer-a-color);
+        text-align: center;
+        > .footer-social-list { 
+            > li {
+                display: inline-block;
+                > a > i {
+                    font-size: 1.25rem;
+                    color: var(--footer-a-color);
+                    margin-right: .5rem;
+                }
+            }
         } 
         > .footer-social-list > li > a:hover > i {      
             color: var(--anchor-active-color);

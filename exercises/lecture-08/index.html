@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .min-content {
+            inline-size: min-content;
+        }
+        .max-content {
+            inline-size: max-content;
+        }
+        .fit-content {
+            inline-size: fit-content;
+        }
+
+        .block {
+            width: 200px;
+            height: 200px;
+            background-image: url("./image.jpg");
+            background-repeat: no-repeat;
+            background-origin: border-box;
+            background-size: cover;
+            padding: 20px;
+            border: 20px solid rgb(0 0 0 / 0.3);
+        }
+
+        .c1 {
+            background-clip: padding-box;
+        }
+        .c2 {
+            background-clip: border-box;
+        }
+        .c3 {
+            background-clip: content-box;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    
+<p class="min-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<p class="max-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<p class="fit-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+
+<div class="block c1"></div>
+<div class="block c2"></div>
+<div class="block c3"></div>
+</body>
+</html>
