@@ -8,24 +8,64 @@ main .container h2 {
    text-transform: uppercase;
 }  
 
+.bg-sale {
+    background-color: red;
+    color: white;
+}
+
 .product-container{
     > .product {
+        width: 12.5rem;
+        overflow: hidden;
+        position: relative;
         > .icons {
+            position: absolute;
+            top:1rem;
+            right: 1rem;
+            z-index: -1;
            >  a{
                 background-color: #fff;
                 color: var(--anchor-color);
+                
+                display: block;
+                margin-top: .5rem;
+                width: 1.5rem;
+                height: 1.5rem;
+                line-height: 1.5rem;
+                text-align: center;
+                
             }
+
             >  a:hover{
                 background-color: var(--anchor-active-color);
                 color: #fff;
             }
         }
         > .image {
-
+            object-fit: cover;
+            > .badge {
+                display: inline-block;
+                text-align: center;
+                vertical-align: baseline;
+                font-size: .75rem;
+                padding: .25rem .45rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 10;
+            }
         }
         > .content {
+            padding: .5rem;
             > h3 {
-
+                padding-bottom: .5rem;
+                text-align: center;
+                font-size: 1rem;
+                position: absolute;
+                bottom: -3rem;
+                left: 0;
+                right: 0;
+                z-index: 10;
             }
             > .price{
                 font-weight: 600;
@@ -35,7 +75,20 @@ main .container h2 {
                 color: var(--anchor-active-color);
                 content: var(--currency-symbol);
             }
+            > .price:nth-of-type(1) {
+                float: left;
+                text-decoration: line-through;
+            }
+            > .price:nth-of-type(2) {
+                float: right;
+            }
         }
+    }
+    > .product:hover h3 {
+        bottom: 1.5rem;
+    }
+    > .product:hover .icons {
+        z-index: 10;
     }
 }
 

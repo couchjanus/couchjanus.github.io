@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+           
+            overflow-x: hidden; 
+           
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 50%;
+            margin: 1rem 2rem;
+        }
+
+        .box {
+            padding: 4rem;
+            text-align: center;
+            font-size: 4rem;
+            color: white;
+            
+        }
+
+        .red {
+            background-color: red;
+            padding: 1rem;
+
+        }
+/*
+        .red::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+*/
+.red {
+    overflow: hidden; 
+}
+        
+        .green {
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+        .pink {
+            background-color: pink;
+        } 
+
+        .wrapper {
+            width: 100%;
+            border: solid 2px darkmagenta;
+        }
+
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
+
+        .clear-left {
+            clear: left;
+        }
+
+        dt {
+            background-color: black;
+            color: white;
+            padding: 1rem;
+            margin: 1em 0;
+            z-index: 5;
+            position: sticky;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Управління потоком</h2>
+
+    <div class="wrapper">
+        <div class="box red">1</div>
+        <div class="box green left">2</div>
+        <div class="box yellow">3</div>
+        <div class="box blue clear-left">4</div>
+        
+    </div>
+
+    <div class="red">
+        <img src="image.jpg" class="right">
+    </div>
+
+
+    Поширене використання position: sticky - це створення сторінки покажчика, що прокручується, де різні заголовки прилипають до верхньої частини сторінки, коли вони досягають її. Розмітка для такого прикладу може виглядати так:
+<h1>Sticky positioning</h1>
+   <dl>
+       <dt>A</dt>
+           <dd>Apple</dd>
+           <dd>Ant</dd>
+           <dd>Altimeter</dd>
+           <dd>Airplane</dd>
+       <dt>B</dt>
+           <dd>Bird</dd>
+           <dd>Buzzard</dd>
+           <dd>Bee</dd>
+           <dd>Banana</dd>
+           <dd>Beanstalk</dd>
+           <dt>A</dt>
+           <dd>Apple</dd>
+           <dd>Ant</dd>
+           <dd>Altimeter</dd>
+           <dd>Airplane</dd>
+       <dt>C</dt>
+           <dd>Bird</dd>
+           <dd>Buzzard</dd>
+           <dd>Bee</dd>
+           <dd>Banana</dd>
+           <dd>Beanstalk</dd>
+           <dt>A</dt>
+           <dd>Apple</dd>
+           <dd>Ant</dd>
+           <dd>Altimeter</dd>
+           <dd>Airplane</dd>
+       <dt>D</dt>
+           <dd>Bird</dd>
+           <dd>Buzzard</dd>
+           <dd>Bee</dd>
+           <dd>Banana</dd>
+           <dd>Beanstalk</dd>
+           <dt>A</dt>
+           <dd>Apple</dd>
+           <dd>Ant</dd>
+           <dd>Altimeter</dd>
+           <dd>Airplane</dd>
+       <dt>E</dt>
+           <dd>Bird</dd>
+           <dd>Buzzard</dd>
+           <dd>Bee</dd>
+           <dd>Banana</dd>
+           <dd>Beanstalk</dd>
+           <dt>A</dt>
+           <dd>Apple</dd>
+           <dd>Ant</dd>
+           <dd>Altimeter</dd>
+           <dd>Airplane</dd>
+       <dt>F</dt>
+           <dd>Bird</dd>
+           <dd>Buzzard</dd>
+           <dd>Bee</dd>
+           <dd>Banana</dd>
+           <dd>Beanstalk</dd>
+   </dl>
+
+</body>
+</html>
