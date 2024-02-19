@@ -7,6 +7,10 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 7%;
     /* brand */
     > .brand {
         color: var(--anchor-active-color);
@@ -16,6 +20,7 @@
     > .navbar {
         > a {
             font-size: 1.1rem;
+            margin-right: .5rem;
             color: var(--anchor-color);
         }
         > a:hover {

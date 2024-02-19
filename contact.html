@@ -4,21 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <header>
+    <header class="page-header">
         <!-- brand -->
-        <strong>Shopaholic</strong>
+        <a href="/index.html" class="brand">Shopaholic</a>
         <!-- navigation -->
-        <nav>
-            <a href="/index.html">Home page</a>
-            <a href="catalog.html">Catalog</a>
-            <a href="blog.html">Blog</a>
-            <a href="abouit.html">About</a>
-            <a href="contact.html">Contact</a>
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/catalog.html">Catalog</a>
+            <a href="./blog.html">Blog</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>    
+        </nav>
+
+        <nav class="toolbar">
+            <a href="#" class="far fa-heart"></a>
+            <a href="/cart.html" class="fas fa-dolly-flatbed"></a>
+            <a href="#" class="far fa-user"></a>
         </nav>
     </header>
-    <h1>Contact page</h1>
+    <section class="breadcrumb-bg-light mt-5">
+        <div class="container py-3 px-5">
+            <div class="breadcrumb-container">
+                <div class="breadcrumb-title">
+                    Contact Us
+                </div>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Contacts</li>
+                </ul>
+            </div>
+        </div>
+    </section>
     
+    <h1>Contact page</h1>
+    <footer class="mb-3">
+        <div class="container page-footer">
+            <section class="footer-main">
+                <div class="footer-main-item">
+                    <h3 class="footer-title">About</h3>
+                    <ul>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">Profiles</a></li>
+                        <li><a href="">Priceas</a></li>
+                        <li><a href="">Customers</a></li>
+                        <li><a href="./exercises/index.html">Exercises</a></li>
+                    </ul>
+                </div>
+                <div class="footer-main-item">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul>
+                        <li><a href="">Docs</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">eBooks</a></li>
+                        <li><a href="">Webinars</a></li>
+                    </ul>
+                </div>
+                <div class="footer-main-item">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul>
+                        <li><a href="">Help</a></li>
+                        <li><a href="">Sales</a></li>
+                        <li><a href="">Advertise</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="footer-social py-3">
+                <ul class="footer-social-list">
+                    <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </section>
+           
+            <section class="footer-ligal">
+                <ul class="footer-ligal-list">
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">&copy; 2024 Copyright Shopaholic Inc.</a></li>
+                </ul>
+                
+            </section>
+        </div>
+    </footer>
 </body>
 </html>

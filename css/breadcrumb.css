@@ -1,0 +1,47 @@
+.breadcrumb-bg-light {
+    background-color: rgb(161 161 161 / 0.1);
+}
+
+.breadcrumb-container {
+    --breadcrumb-active-color: rgb(0 0 0 / .5);
+    --breadcrumb-color: indigo;
+    --breadcrumb-divider: '/';
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+
+    & .breadcrumb-title {
+        font-size: 1.1rem;
+    }
+    & .breadcrumb {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        font-size: 1rem;
+        justify-content: flex-end;
+
+        & .breadcrumb-item {
+            color: var(--breadcrumb-color);
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+        }
+
+        & .breadcrumb-item.active {
+            color: var(--breadcrumb-active-color);
+        }
+        & .breadcrumb-item a:hover {
+            color: var(--breadcrumb-active-color);
+        }
+
+        & .breadcrumb-item+.breadcrumb-item {
+            padding-left: .5rem;
+        }
+        & .breadcrumb-item+.breadcrumb-item::before {
+            float: left;
+            padding-right: .5rem;
+            content: var(--breadcrumb-divider);
+        }
+
+    }
+}
