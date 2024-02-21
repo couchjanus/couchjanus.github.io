@@ -14,7 +14,10 @@ main .container h2 {
 }
 
 .product-container{
-    > .product {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap:.3rem;
+    & .product {
         width: 12.5rem;
         overflow: hidden;
         position: relative;
@@ -90,6 +93,12 @@ main .container h2 {
     > .product:hover .icons {
         z-index: 10;
     }
+}
+
+#catalog {
+    display: grid;
+    gap:1em;
+    grid-template-columns: 15rem auto;
 }
 
 ul.categories a:hover {

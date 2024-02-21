@@ -1,0 +1,14 @@
+#contact .container {
+    display: grid;
+    gap:1em;
+    grid-template-columns: auto 15rem;
+}
+
+.contact-main {
+    height: 30ch;
+    border: 1px dotted red;
+}
+
+.contact-sidebar {
+    border: 1px dotted goldenrod;
+}
