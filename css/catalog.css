@@ -95,11 +95,16 @@ main .container h2 {
     }
 }
 
-#catalog {
-    display: grid;
-    gap:1em;
-    grid-template-columns: 15rem auto;
+
+
+@media (min-width: 35rem) {
+    #catalog {
+        display: grid;
+        gap:1em;
+        grid-template-columns: 15rem auto;
+    }
 }
+
 
 ul.categories a:hover {
     color: var(--anchor-active-color);

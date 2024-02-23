@@ -10,6 +10,33 @@
     }
 }
 
+/* flex layout */
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.flex-container > * {
+    width: 100%;
+}
+
+@media (min-width: 35rem) {
+
+    .flex-container > * {
+        width: 100%;
+    }
+    .flex-container > * {
+        width: calc((100% - 2rem) / 3);
+    }
+    
+}
+
+
+
 .bg-cover {
     background-size: cover;
 }
