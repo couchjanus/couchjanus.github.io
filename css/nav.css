@@ -1,5 +1,8 @@
 /* nav */
 
+#toggler {
+    display: none;
+}
 .page-header {
     background-color: white;
     position: fixed;
@@ -23,6 +26,8 @@
         left: 0;
         right: 0;
         background-color: white;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
         > a {
             font-size: 1.1rem;
             margin-right: .5rem;
@@ -33,6 +38,12 @@
             color: var(--anchor-active-color);
             text-decoration: underline;
         }
+
+        
+    }
+    #toggler:checked ~ nav.navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
     }
     > .toolbar {
         > a {
@@ -53,12 +64,15 @@
     .page-header {
         & .navbar {
             position: relative;
+            clip-path: unset;
         }
         & .navbar > a {
             display: inline-block;
         }
     }
-    
+    .page-header label {
+        display: none;
+    }
 }
 
 

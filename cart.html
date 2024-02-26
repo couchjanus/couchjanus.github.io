@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+    <!-- page header -->
     <header class="page-header">
         <!-- brand -->
         <a href="/index.html" class="brand">Shopaholic</a>
@@ -29,51 +31,68 @@
         <div class="container py-3 px-5">
             <div class="breadcrumb-container">
                 <div class="breadcrumb-title">
-                    Contact Us
+                    Shopping cart
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Contacts</li>
+                    <li class="breadcrumb-item active">Your cart</li>
                 </ul>
             </div>
         </div>
     </section>
-    
-    
-    <section id="contact" class="mb-3">
-        <div class="container py-3 px-4">
-            <div class="contact-main">
-                <form action="www.site" class="form">
-                    <div class="form-container">
-                        <div class="input-group">
-                            <div>
-                                <label for="first-name" class="form-label">Your First Name *</label>
-                                <input type="text" class="form-control" id="first-name" placeholder="Your First Name here.." required>
-                            </div>
-                            <div>
-                                <label for="last-name" class="form-label">Your Last Name *</label>
-                                <input type="text" class="form-control" id="last-name" placeholder="Your Last Name here..." required>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <label for="email" class="form-label">Your Email *</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="message" class="form-label">Your message *</label>
-                            <textarea id="message" class="form-control" rows="4" placeholder="Drop Your message here..." required></textarea>
-                        </div>
-                        <div class="input-group">
-                            <button class="btn btn-primary" type="submit">Send message</button>
-                        </div>
-                    </div>
 
-                
-            
+    <section id="cart" class="mb-3">
+        <div class="cart-container py-3 px-4">
+            <div class="cart-main">
+                <div class="table">
+                    <div class="row header">
+                        <div class="cell">Product</div>
+                        <div class="cell">Price</div>
+                        <div class="cell">Quantity</div>
+                        <div class="cell">Total</div>
+                        <div class="cell">Action</div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">Product 1</div>
+                        <div class="cell">123</div>
+                        <div class="cell">11</div>
+                        <div class="cell">1234</div>
+                        <div class="cell"><a href="#!" class="fas fa-trash-alt"></a></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">Product 1</div>
+                        <div class="cell">123</div>
+                        <div class="cell">11</div>
+                        <div class="cell">1234</div>
+                        <div class="cell"><a href="#!" class="fas fa-trash-alt"></a></div>
+                    </div>                    
+                    <div class="row">
+                        <div class="cell">Product 1</div>
+                        <div class="cell">123</div>
+                        <div class="cell">11</div>
+                        <div class="cell">1234</div>
+                        <div class="cell"><a href="#!" class="fas fa-trash-alt"></a></div>
+                    </div>                    
+                    <div class="row">
+                        <div class="cell">Product 1</div>
+                        <div class="cell">123</div>
+                        <div class="cell">11</div>
+                        <div class="cell">1234</div>
+                        <div class="cell"><a href="#!" class="fas fa-trash-alt"></a></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">Product 1</div>
+                        <div class="cell">123</div>
+                        <div class="cell">11</div>
+                        <div class="cell">1234</div>
+                        <div class="cell"><a href="#!" class="fas fa-trash-alt"></a></div>
+                    </div>
+                </div>
             </div>
-            <div class="contact-sidebar">Sidebar</div>
+            <div class="cart-sidebar">Sidebar</div>
         </div>
     </section>
+    <!-- page footer -->
     <footer class="mb-3">
         <div class="container page-footer">
             <section class="footer-main">
