@@ -67,7 +67,7 @@ console.log(password.includes(chunk));
 
 // +044-123-456-7890
 // const pattern = /^\+[0-9]{1}[0-9]{0, 2}-[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
-
+// ^['.ru|.su] ^[xyz] /^[a-z]+[0-9]+$/
 function validate(number) {
     const pattern = /^\+[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
 
@@ -91,7 +91,7 @@ console.log(str.substring(5, 24));
 console.log(str.substr(5, 24)); // deprecated
 console.log("    test test      ");
 console.log("    test test      ".trim());
-
+// .ru .su 
 function isEmptyStr(str) {
     return (str ?? '') === '';
 }
