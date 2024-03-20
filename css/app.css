@@ -228,3 +228,16 @@
     border-color:maroon;
     color: salmon;
 }
+
+
+.test-css {
+    color:red; 
+    font: 600 2.5rem/1.7; 
+    padding:1.5rem 2rem; 
+    text-align:center;  
+    background-color: aqua;
+}
+
+.test-css2 {
+    background-color: violet;
+}
