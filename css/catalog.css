@@ -15,18 +15,21 @@ main .container h2 {
 
 .product-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap:.3rem;
+
     & .product {
-        width: 12.5rem;
+
         overflow: hidden;
         position: relative;
-        > .icons {
+        /* height: 15rem; */
+        max-height: 15rem;
+        .icons {
             position: absolute;
             top:1rem;
             right: 1rem;
             z-index: -1;
-           >  a{
+            a{
                 background-color: #fff;
                 color: var(--anchor-color);
                 
@@ -39,14 +42,14 @@ main .container h2 {
                 
             }
 
-            >  a:hover{
+            a:hover{
                 background-color: var(--anchor-active-color);
                 color: #fff;
             }
         }
-        > .image {
-            object-fit: cover;
-            > .badge {
+        .image {
+            
+            .badge {
                 display: inline-block;
                 text-align: center;
                 vertical-align: baseline;
@@ -57,10 +60,15 @@ main .container h2 {
                 left: 0;
                 z-index: 10;
             }
+            img {
+                object-fit: cover;
+                max-width: 100%;
+                display: block;
+            }
         }
-        > .content {
+        .content {
             padding: .5rem;
-            > h3 {
+            h3 {
                 padding-bottom: .5rem;
                 text-align: center;
                 font-size: 1rem;
@@ -70,27 +78,27 @@ main .container h2 {
                 right: 0;
                 z-index: 10;
             }
-            > .price{
+            .price{
                 font-weight: 600;
                 color: var(--anchor-active-color);
             }
-            > .price::before {
+            .price::before {
                 color: var(--anchor-active-color);
                 content: var(--currency-symbol);
             }
-            > .price:nth-of-type(1) {
+            .price:nth-of-type(1) {
                 float: left;
                 text-decoration: line-through;
             }
-            > .price:nth-of-type(2) {
+            .price:nth-of-type(2) {
                 float: right;
             }
         }
     }
-    > .product:hover h3 {
+    .product:hover h3 {
         bottom: 1.5rem;
     }
-    > .product:hover .icons {
+    .product:hover .icons {
         z-index: 10;
     }
 }
