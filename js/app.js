@@ -28,16 +28,24 @@ function Cart(tax = 0.07, shipping = 0) {
     
     this.addItemToCart = function(product) {
 
-        for (let item in cart) {
-            if(cart[item].id === product.id) {
-                cart[item].amount += product.amount;
-                this.saveCart();
-                return;
-            }
+        // for (let item in cart) {
+        //     if(cart[item].id === product.id) {
+        //         cart[item].amount += product.amount;
+        //         this.saveCart();
+        //         return;
+        //     }
+        // }
+
+        let inCart = cart.same(item => item.id === product.id);
+
+        if(inCart) {
+            let index = cart.find(item => item.id === product.id);
+            cart[index].amount += product.amount;
+        } else {
+            let item = new Item(product.id, product.price, product.amount);
+            cart.push(item);
         }
 
-        let item = new Item(product.id, product.price, product.amount);
-        cart.push(item);
         this.saveCart();
     }
 
@@ -95,7 +103,7 @@ function Cart(tax = 0.07, shipping = 0) {
 
 }
 
-const productContainer = document.querySelector('.product-container');
+
 
 // let addToCart = productContainer.querySelector('.add-to-cart');
 // let showDetail = productContainer.querySelector('.show-detail');
@@ -141,10 +149,7 @@ function CardProduct(item) {
     });
 
 }
-let productCards = productContainer.querySelectorAll('.product');
-for (const item of productCards) {
-    new CardProduct(item);
-}
+
 
 // let addToCartButtons = productContainer.querySelectorAll('.add-to-cart');
 
@@ -155,7 +160,51 @@ for (const item of productCards) {
 // }
 
 function main() {
+    const productContainer = document.querySelector('.product-container');
 
+    let productCards = productContainer.querySelectorAll('.product');
+
+    // for (const item of productCards) {
+    //     new CardProduct(item);
+    // }
+    productCards.forEach(item => new CardProduct(item));
+
+    let products = [];
+    productCards.forEach(function(item) {
+        let id = item.querySelector('.content').getAttribute('id');
+        let name = item.querySelector('.product-name').textContent;
+        let price = item.querySelector('.product-price').textContent;
+        let action = item.querySelector('.badge').textContent;
+
+        products = [...products, {id:+id, name:name, price:+price, action:action}];
+    })
+
+    console.log(products)
+
+    const findByProps = function(items, props, what) {
+        let result = [];
+        items.find((item, index) => {
+            if (item[props] === what) {
+                result.push(items[index]);
+            }
+        })
+        return result;
+    }
+    console.log(findByProps(products, "action", 'New'))
+
+    const compare = (key, order='asc') => (a, b) => {
+        if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) return 0;
+        const A = (typeof a[key] === 'string') ? a[key].toUpperCase() : a[key];
+        const B = (typeof b[key] === 'string') ? b[key].toUpperCase() : b[key];
+
+        let comparison = 0;
+        comparison = (A > B) ? 1 : -1;
+        return (order === 'desc') ? -comparison : comparison;
+    }
+
+
+    let sorted = products.sort(compare('id', 'desc')) // 'desc'
+    console.log(sorted)
 }
 
 if (document.readyState === 'loading') {
