@@ -23,7 +23,7 @@
 
         <nav class="toolbar">
             <a href="#" class="far fa-heart"></a>
-            <a href="/cart.html" class="fas fa-dolly-flatbed"></a>
+            <a href="/cart.html" class="fas fa-dolly-flatbed">(<span id="cart-amount">0</span>)</a>
             <a href="#" class="far fa-user"></a>
         </nav>
     </header>
@@ -41,177 +41,41 @@
         </div>
     </section>
     <section class="" id="catalog">
-        <aside>
+        <aside id="sidebar">
             <div class="sidebar-wrapper">
-                <header>
-                    <h2>Categories</h2>
-                </header>
-                <ul class="categories">
-                    <li><a href="">Electronics</a></li>
-                    <li><a href="">T-Shirts</a></li>
-                    <li><a href="">Shoos</a></li>
-                    <li><a href="">Wotched</a></li>
-                    <li><a href="">Sunglasses</a></li>
-                </ul>
+                <header><h2>Categories</h2></header>
+                <span id="category-container"></span>
+                <h2 class="text-uppercase mb-4">Show only</h2>
+                <span class="show-only"></span>
             </div>
         </aside>
         <main>
             <div class="container py-3 px-4">
-                <div class="product-container">
-                    <article class="product">
-                        <div class="icons">
-                            <a href="" class="fas fa-shopping-cart"></a>
-                            <a href="" class="fas fa-heart"></a>
-                            <a href="" class="fas fa-eye"></a>
-                        </div>
-                        <div class="image">
-                            <div class="badge bg-sale">Sale</div>
-                            <img src="/images/product-6.jpg" alt="Picture for product 6" height="200">
-                        </div>
-                        <div class="content">
-                            <h3>Product name</h3>
-                            <span class="price">111.99</span> <span class="price">99.99</span>
-                        </div>
-                        
-                    </article>
-                    <article class="product">
-                        <div class="icons">
-                            <a href="" class="fas fa-shopping-cart"></a>
-                            <a href="" class="fas fa-heart"></a>
-                            <a href="" class="fas fa-eye"></a>
-                        </div>
-                        <div class="image">
-                            <div class="badge bg-sale">Sale</div>
-                            <img src="/images/product-6.jpg" alt="Picture for product 6" height="200">
-                        </div>
-                        <div class="content">
-                            <h3>Product name</h3>
-                            <span class="price">111.99</span> <span class="price">99.99</span>
-                        </div>
-                        
-                    </article>
-                    <article class="product">
-                        <div class="icons">
-                            <a href="" class="fas fa-shopping-cart"></a>
-                            <a href="" class="fas fa-heart"></a>
-                            <a href="" class="fas fa-eye"></a>
-                        </div>
-                        <div class="image">
-                            <div class="badge bg-sale">Sale</div>
-                            <img src="/images/product-6.jpg" alt="Picture for product 6" height="200">
-                        </div>
-                        <div class="content">
-                            <h3>Product name</h3>
-                            <span class="price">111.99</span> <span class="price">99.99</span>
-                        </div>
-                        
-                    </article>
-                    <article class="product">
-                        <div class="icons">
-                            <a href="" class="fas fa-shopping-cart"></a>
-                            <a href="" class="fas fa-heart"></a>
-                            <a href="" class="fas fa-eye"></a>
-                        </div>
-                        <div class="image">
-                            <div class="badge bg-sale">Sale</div>
-                            <img src="/images/product-6.jpg" alt="Picture for product 6" height="200">
-                        </div>
-                        <div class="content">
-                            <h3>Product name</h3>
-                            <span class="price">111.99</span> <span class="price">99.99</span>
-                        </div>
-                        
-                    </article>
-                    <article class="product">
-                        <div class="icons">
-                            <a href="" class="fas fa-shopping-cart"></a>
-                            <a href="" class="fas fa-heart"></a>
-                            <a href="" class="fas fa-eye"></a>
-                        </div>
-                        <div class="image">
-                            <div class="badge bg-sale">Sale</div>
-                            <img src="/images/product-6.jpg" alt="Picture for product 6" height="200">
-                        </div>
-                        <div class="content">
-                            <h3>Product name</h3>
-                            <span class="price">111.99</span> <span class="price">99.99</span>
-                        </div>
-                        
-                    </article>
-                    <article class="product">
-                        <div class="icons">
-                            <a href="" class="fas fa-shopping-cart"></a>
-                            <a href="" class="fas fa-heart"></a>
-                            <a href="" class="fas fa-eye"></a>
-                        </div>
-                        <div class="image">
-                            <div class="badge bg-sale">Sale</div>
-                            <img src="/images/product-6.jpg" alt="Picture for product 6" height="200">
-                        </div>
-                        <div class="content">
-                            <h3>Product name</h3>
-                            <span class="price">111.99</span> <span class="price">99.99</span>
-                        </div>
-                        
-                    </article>
+                <header class="header">
+                    <h2 class="text-center">Our <span>Products</span></h2>
+                </header>
+                <div class="row mb-3 align-items-center">
+                    <div class="col mb-2 mb-lg-0">
+                      <p class="text-sm text-muted mb-0">Showing 1–12 of 53 results</p>
+                    </div>
+                    <div class="col">
+                      <select id="selectpicker" class="form-select form-select-lg mb-2 text-sm text-muted" name="sorting" data-width="200" data-title="Default sorting">
+                      </select>
+                    </div>
                 </div>
+                <div class="product-container"></div>
             </div>
         </main>
     </section>
-
+    <script src="/js/db.js"></script>
+    <script src="/js/app.js"></script>
     <!-- page footer -->
-    <footer class="mb-3">
-        <div class="container page-footer">
-            <section class="footer-main">
-                <div class="footer-main-item">
-                    <h3 class="footer-title">About</h3>
-                    <ul>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">Profiles</a></li>
-                        <li><a href="">Priceas</a></li>
-                        <li><a href="">Customers</a></li>
-                        <li><a href="./exercises/index.html">Exercises</a></li>
-                    </ul>
-                </div>
-                <div class="footer-main-item">
-                    <h3 class="footer-title">Resources</h3>
-                    <ul>
-                        <li><a href="">Docs</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">eBooks</a></li>
-                        <li><a href="">Webinars</a></li>
-                    </ul>
-                </div>
-                <div class="footer-main-item">
-                    <h3 class="footer-title">Contact</h3>
-                    <ul>
-                        <li><a href="">Help</a></li>
-                        <li><a href="">Sales</a></li>
-                        <li><a href="">Advertise</a></li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="footer-social py-3">
-                <ul class="footer-social-list">
-                    <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fab fa-github"></i></a></li>
-                    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
-                    <li><a href=""><i class="fab fa-youtube"></i></a></li>
-                </ul>
-            </section>
-           
-            <section class="footer-ligal">
-                <ul class="footer-ligal-list">
-                    <li><a href="#">Terms &amp; Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">&copy; 2024 Copyright Shopaholic Inc.</a></li>
-                </ul>
-                
-            </section>
-        </div>
-    </footer>
+    
+    <dialog id="details">
+        <a href="#!" title="Close" class="close fas fa-times"></a>
+        <span class="dialog-main"></span>
+        
+          
+      </dialog>
 </body>
 </html>

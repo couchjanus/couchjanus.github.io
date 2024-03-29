@@ -13,21 +13,15 @@ main .container h2 {
     color: white;
 }
 
-.bg-new {
-    background-color: green;
-    color: white;
-}
-
 .product-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     gap:.3rem;
-
     & .product {
-
         overflow: hidden;
         position: relative;
-   
+        height: 17rem;
+        max-width: 12rem;
         .icons {
             position: absolute;
             top:1rem;
@@ -52,7 +46,7 @@ main .container h2 {
             }
         }
         .image {
-            
+
             .badge {
                 display: inline-block;
                 text-align: center;
@@ -68,7 +62,7 @@ main .container h2 {
                 object-fit: cover;
                 max-width: 100%;
                 display: block;
-                height: 20rem;
+                height: 15rem;
                 
             }
         }
@@ -85,7 +79,8 @@ main .container h2 {
                 z-index: 10;
             }
             .price{
-                font-weight: 600;
+                font-weight: 500;
+                font-size: .8rem;
                 color: var(--anchor-active-color);
             }
             .price::before {
@@ -99,6 +94,10 @@ main .container h2 {
             .price:nth-of-type(2) {
                 float: right;
             }
+            .price:empty {
+                display: none;
+            }
+
         }
     }
     .product:hover h3 {
@@ -127,4 +126,116 @@ ul.categories a:hover {
 
 ul.categories li:nth-child(even) {
     background-color: lightgrey;
+}
+
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row .col {
+    flex: 1;
+}
+
+
+.form-select {
+    display: block;
+    width: 100%;
+    padding: .375rem 2.25rem .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #212529;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml, %3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-select:focus {
+    border-color: #eed8a5;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(220, 177, 74, 0.25);
+}
+
+.form-select-lg {
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+    padding-left: 1rem;
+    font-size: 1rem;
+    border-radius: 0;
+}
+
+.form-check .form-check-input {
+    float      : left;
+    margin-left: 1.5em
+}
+
+.form-check-input {
+    width                     : 1em;
+    height                    : 1em;
+    margin-top                : .25em;
+    vertical-align            : top;
+    background-color          : #fff;
+    background-repeat         : no-repeat;
+    background-position       : center;
+    background-size           : contain;
+    border                    : 1px solid rgba(0, 0, 0, 0.25);
+    -webkit-appearance        : none;
+    -moz-appearance           : none;
+    appearance                : none;
+    -webkit-print-color-adjust: exact;
+    color-adjust              : exact
+}
+
+.form-check-input[type="checkbox"] {
+    border-radius: .25em
+}
+
+
+.form-check-input:active {
+    -webkit-filter: brightness(90%);
+    filter        : brightness(90%)
+}
+
+.form-check-input:focus {
+    border-color: #a3a8ee;
+    outline     : 0;
+    box-shadow  : 0 0 0 .2rem rgba(70, 80, 221, 0.25)
+}
+
+.form-check-input:checked {
+    background-color: #4650dd;
+    border-color    : #4650dd
+}
+
+.form-check-input:checked[type="checkbox"] {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e")
+}
+
+
+.form-check-input[type="checkbox"]:indeterminate {
+    background-color: #4650dd;
+    border-color    : #4650dd;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e")
+}
+
+
+.bg-dark {
+    background-color: black;
+}
+.text-white {
+    color: white;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
 }
