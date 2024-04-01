@@ -9,9 +9,11 @@
 </head>
 <body>
     <!-- page header -->
-    <header class="page-header">
+    <header class="page-header mb-3">
         <!-- brand -->
         <a href="/index.html" class="brand">Shopaholic</a>
+        <label for="toggler">&nbsp;<i class="fas fa-bars"></i>&nbsp;</label>
+        <input type="checkbox" id="toggler">
         <!-- navigation -->
         <nav class="navbar">
             <a href="/index.html">Home</a>
@@ -23,7 +25,7 @@
 
         <nav class="toolbar">
             <a href="#" class="far fa-heart"></a>
-            <a href="/cart.html" class="fas fa-dolly-flatbed"></a>
+            <a href="/cart.html" class="fas fa-dolly-flatbed">(<span id="cart-amount">0</span>)</a>
             <a href="#" class="far fa-user"></a>
         </nav>
     </header>
@@ -40,111 +42,53 @@
             </div>
         </div>
     </section>
-
-    <section id="cart" class="mb-3">
+    <section id="cart-page" class="mb-3">
         <div class="cart-container py-3 px-4">
             <div class="cart-main">
                 <div class="table">
-                    <div class="row header">
-                        <div class="cell">Product</div>
-                        <div class="cell">Price</div>
-                        <div class="cell">Quantity</div>
-                        <div class="cell">Total</div>
-                        <div class="cell">Action</div>
-                    </div>
-                    <div class="row">
-                        <div class="cell">Product 1</div>
-                        <div class="cell">123</div>
-                        <div class="cell">11</div>
-                        <div class="cell">1234</div>
-                        <div class="cell"><a href="#!" class="fas fa-trash-alt"></a></div>
-                    </div>
-                    <div class="row">
-                        <div class="cell">Product 1</div>
-                        <div class="cell">123</div>
-                        <div class="cell">11</div>
-                        <div class="cell">1234</div>
-                        <div class="cell"><a href="#!" class="fas fa-trash-alt"></a></div>
-                    </div>                    
-                    <div class="row">
-                        <div class="cell">Product 1</div>
-                        <div class="cell">123</div>
-                        <div class="cell">11</div>
-                        <div class="cell">1234</div>
-                        <div class="cell"><a href="#!" class="fas fa-trash-alt"></a></div>
-                    </div>                    
-                    <div class="row">
-                        <div class="cell">Product 1</div>
-                        <div class="cell">123</div>
-                        <div class="cell">11</div>
-                        <div class="cell">1234</div>
-                        <div class="cell"><a href="#!" class="fas fa-trash-alt"></a></div>
-                    </div>
-                    <div class="row">
-                        <div class="cell">Product 1</div>
-                        <div class="cell">123</div>
-                        <div class="cell">11</div>
-                        <div class="cell">1234</div>
-                        <div class="cell"><a href="#!" class="fas fa-trash-alt"></a></div>
+                    
+                    
+                    
+                </div>
+            </div>
+            <div class="cart-sidebar">
+                <div class="card bg-light">
+                    <div class="card-body">
+                      <h4 class="text-uppercase mb-4">Cart total</h4>
+                      <ul class="list-unstyled">
+                        <li class="d-flex align-items-center justify-content-between">
+                          <strong class="text-uppercase">Subtotal: </strong>&nbsp;
+                          <span class="text-muted small"><span class="cart-subtotal price">250</span></span>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-between">
+                          <strong class="text-uppercase">Tax: </strong>&nbsp;
+                          <span class="text-muted small"><span class="cart-tax price">2</span></span>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-between">
+                            <strong class="text-uppercase">Shipping: </strong>&nbsp;
+                            <span class="text-muted small"><span class="cart-shipping price">2</span></span>
+                          </li>
+                        <li class="border-bottom my-2"></li>
+                        <li class="d-flex align-items-center justify-content-between mb-4">
+                          <strong class="text-uppercase">Total:</strong>&nbsp;
+                          <span class="text-muted small"><span class="cart-total price">250</span></span>
+                        </li>
+                        <li>
+                          <form action="#">
+                            <div class="input-group">
+                              <input class="form-control mb-1" type="text" placeholder="Enter your coupon">
+                              <button class="btn btn-primary" type="submit"> <i class="fas fa-gift"></i>&nbsp;Apply coupon</button>
+                            </div>
+                          </form>
+                        </li>
+                      </ul>
                     </div>
                 </div>
             </div>
-            <div class="cart-sidebar">Sidebar</div>
         </div>
     </section>
     <!-- page footer -->
-    <footer class="mb-3">
-        <div class="container page-footer">
-            <section class="footer-main">
-                <div class="footer-main-item">
-                    <h3 class="footer-title">About</h3>
-                    <ul>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">Profiles</a></li>
-                        <li><a href="">Priceas</a></li>
-                        <li><a href="">Customers</a></li>
-                        <li><a href="./exercises/index.html">Exercises</a></li>
-                    </ul>
-                </div>
-                <div class="footer-main-item">
-                    <h3 class="footer-title">Resources</h3>
-                    <ul>
-                        <li><a href="">Docs</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">eBooks</a></li>
-                        <li><a href="">Webinars</a></li>
-                    </ul>
-                </div>
-                <div class="footer-main-item">
-                    <h3 class="footer-title">Contact</h3>
-                    <ul>
-                        <li><a href="">Help</a></li>
-                        <li><a href="">Sales</a></li>
-                        <li><a href="">Advertise</a></li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="footer-social py-3">
-                <ul class="footer-social-list">
-                    <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fab fa-github"></i></a></li>
-                    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
-                    <li><a href=""><i class="fab fa-youtube"></i></a></li>
-                </ul>
-            </section>
-           
-            <section class="footer-ligal">
-                <ul class="footer-ligal-list">
-                    <li><a href="#">Terms &amp; Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">&copy; 2024 Copyright Shopaholic Inc.</a></li>
-                </ul>
-                
-            </section>
-        </div>
-    </footer>
+    <script src="/js/db.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>
