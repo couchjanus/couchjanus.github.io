@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <!-- page header -->
+    <header class="page-header mb-3">
+        <!-- brand -->
+        <a href="/index.html" class="brand">Shopaholic</a>
+        <label for="toggler">&nbsp;<i class="fas fa-bars"></i>&nbsp;</label>
+        <input type="checkbox" id="toggler">
+        <!-- navigation -->
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/catalog.html">Catalog</a>
+            <a href="./blog.html">Blog</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>    
+        </nav>
+
+        <nav class="toolbar">
+            <a href="#" class="far fa-heart"></a>
+            <a href="/cart.html" class="fas fa-dolly-flatbed">(<span id="cart-amount">0</span>)</a>
+            <a href="#" class="far fa-user"></a>
+        </nav>
+    </header>
+    <section class="breadcrumb-bg-light mt-5">
+        <div class="container py-3 px-5">
+            <div class="breadcrumb-container">
+                <div class="breadcrumb-title">
+                    Billing information
+                </div>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Checkout</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="checkout-page" class="mb-3">
+      <div id="errorMessages" class="mb-3"></div>
+      <form action="#" id="checkout-form">
+        <div class="checkout-container py-3 px-4">
+
+          <div class="checkout-main">
+           
+              <div class="form-container">
+                <div class="input-group mb-3">
+                  <div>
+                    <label class="form-label small text-uppercase">Full name</label>
+                    <input class="form-control" type="text" name="name" placeholder="Enter your full name">
+                  </div>
+                  <div>
+                    <label class="form-label small text-uppercase">Email address</label>
+                    <input class="form-control" type="email" name="email" placeholder="Enter your email address">
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <div>
+                    <label class="form-label small text-uppercase">Address 1</label>
+                    <input class="form-control" type="text" name="address1" placeholder="Enter your main address">
+                  </div>
+                  <div>
+                    <label class="form-label small text-uppercase">Address 2</label>
+                    <input class="form-control" type="text" name="address2" placeholder="Enter your alternative address">
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <div>
+                    <label class="form-label small text-uppercase">City</label>
+                    <input class="form-control" type="text" name="city" placeholder="Enter your city">
+                  </div>
+                  <div>
+                    <label class="form-label small text-uppercase">City postal code</label>
+                    <input class="form-control" type="text" name="zipcode" placeholder="Enter city postal code">
+                  </div>
+                </div>
+              </div>
+           
+          </div>
+          <div class="checkout-sidebar">
+              <div class="mb-5">
+                <form action="#">
+                  <div class="form-container">
+                    <div class="input-group mb-3">
+                            <label class="form-label small text-uppercase">Name on card</label>
+                            <input class="form-control" type="text" placeholder="e.g. Jason Doe">
+                    </div>
+                    <div class="input-group mb-3">
+                            <label class="form-label small text-uppercase">Card number</label>
+                            <input class="form-control" type="text" placeholder="0000-0000-0000-0000">
+                    </div>
+                    <div class="input-group mb-3">
+                            <label class="form-label small text-uppercase">CVV</label>
+                            <input class="form-control" type="text">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- Footer-->
+              <div class="bg-light p-4">
+                <div class="form-container">
+                  <ul class="list-inline mb-0">
+                    <li class="py-1 mb-3">
+                      <p class="text-muted mb-1">Cart total: $75.00</p>
+                    </li>
+                    <li class="py-1 mb-3"><a class="btn btn-outline-primary" href="/cart.html"> <i class="fas fa-shopping-cart me-2"></i>Back to cart</a></li>
+                    <li class="py-1 mb-3"><a class="btn btn-primary" href="completed.html"> <i class="far fa-credit-card me-2"></i>Place order</a></li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+      </form>
+    </section>
+    
+    <script src="/js/db.js"></script>
+    <script src="/js/app.js"></script>
+
+</body>
+</html>
