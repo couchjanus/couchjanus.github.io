@@ -487,6 +487,81 @@ function main() {
         const shippingCartItems = cartPage.querySelector('.cart-main .table');
         shippingCartItems.innerHTML = shoppingCart.populateShoppingCart(products);
         shoppingCart.setCartTotal(shippingCartItems);
+
+        let isAuth = auth => auth ?? false;
+
+        class AuthException extends Error {
+            constructor(code, message) {
+                const fullMessage = message ? `${code}: ${message}` : code;
+                super(fullMessage) ;
+                this.name = code;
+                this.code = code;
+                this.message = fullMessage;
+            }
+
+            toString() {
+                return this.message;
+            }
+        }
+
+
+        class Parent {
+            hello = "Hello world";
+
+            seyHi() {
+                return this.hello;
+            }
+        } 
+
+        let myParent = new Parent();
+        console.log(myParent.seyHi())
+
+        class Child extends Parent {
+
+        }
+
+        let myChild = new Child();
+        console.log(myChild.seyHi())
+
+        const msgBoxId = document.getElementById('dialogBox');
+
+        function showDialog(e) {
+            msgBoxId.querySelector('.message').textContent = e;
+            msgBoxId.showModal();
+        }
+
+
+        const checkoutButton = document.querySelector('.checkout');
+
+        
+
+
+
+        checkoutButton.addEventListener('click', () => {
+            try{
+                console.log(isAuth)
+                if(!isAuth()) {
+                    // 
+                    // throw new Error("Error")
+                    throw new AuthException("FORBIDDEN" , "You don`t have access to this page.");
+                } else {
+                    window.open("/checkout.html");
+                }
+              
+
+            }catch(e){
+                console.error(e)
+                console.error(e.toString())
+                showDialog(e.toString())
+                const closeButton = msgBoxId.querySelector('.close');
+                console.log("closeButton ", closeButton)
+                closeButton.addEventListener('click', () => {
+                    msgBoxId.close();
+                })
+            }
+        })
+
+
     }
 
     const checkoutPage = document.getElementById('checkout-page');

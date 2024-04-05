@@ -77,7 +77,9 @@
                           <form action="#">
                             <div class="input-group">
                               <input class="form-control mb-1" type="text" placeholder="Enter your coupon">
-                              <button class="btn btn-primary" type="submit"> <i class="fas fa-gift"></i>&nbsp;Apply coupon</button>
+                              <button class="btn btn-primary mb-3" type="submit"> <i class="fas fa-gift"></i>&nbsp;Apply coupon</button>
+
+                              <button class="btn btn-primary checkout"> <i class="fas fa-credit-card"></i>&nbsp;Checkout</button>
                             </div>
                           </form>
                         </li>
@@ -87,8 +89,20 @@
             </div>
         </div>
     </section>
+
+
     <!-- page footer -->
     <script src="/js/db.js"></script>
     <script src="/js/app.js"></script>
+
+    <dialog id="dialogBox">
+     
+        <div class="dialog-main">
+          <a href="#!" title="Close" class="close fas fa-times"></a>
+          <h2>Something went wrong</h2>
+          <p class="message"></p>
+          <button>Login or sign up here</button>
+        </div>
+    </dialog>
 </body>
 </html>
