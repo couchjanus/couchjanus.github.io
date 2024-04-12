@@ -1,7 +1,8 @@
 "use strict";
 
 const currency = (total) => parseFloat(Math.round(total * 100) / 100).toFixed(2);
-
+const filterItem = (items, id) => items.filter(item => item.id != id);
+const findItem = (items, id) => items.find(item => item.id == id);
 const compare = (key, order='acs') => (a, b) => {
     if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) return 0;
     
@@ -38,7 +39,7 @@ function Product(id, name, price, image) {
 }
 
 
-function CardProduct(item) {
+function CardProduct(productList, item) {
     
     this.item = item;
    
@@ -90,11 +91,38 @@ function CardProduct(item) {
     let dialogMain = dialog.querySelector("dialog .dialog-main");
     
     
+
+    function renderModal(modal) {
+        modal.querySelector('.btn-inc').addEventListener('click', e => {
+            let val = e.target.previousElementSibling.value;
+            val++;
+            e.target.previousElementSibling.value = val;
+        });
+        modal.querySelector('.btn-dec').addEventListener('click', e => {
+            let val = e.target.nextElementSibling.value;
+            if (val > 1) {
+                val--;
+            }    
+            e.target.nextElementSibling.value = val;
+        });
+
+
+        let quantityResult = modal.querySelector('.quantity-result');
+        let addToCart = modal.querySelector('.add-to-cart');
+        addToCart.addEventListener('click', e => {
+            let id = e.target.closest('.to-cart').dataset.id;
+            let product = productList.getProductById(id);
+            product = {...product, amount: +quantityResult.value};
+            shoppingCart.addItemToCart(product);
+        })
+
+    }
     showButton.addEventListener("click", event => {
         let parent = event.target.closest('.product');
         let id = parent.dataset.id;
         dialogMain.innerHTML = detailTemplate(productList.getProductById(id))
         dialog.showModal();
+        renderModal(dialogMain)
     });
     
     closeButton.addEventListener("click", () => {
@@ -143,9 +171,32 @@ function Cart(tax = 0.07, shipping = 0) {
         <div class="cell"><img src="${product.image}" alt="${product.name}" height="30"></div>
         <div class="cell">${product.name}</div>
         <div class="cell"><span class="product-price price">${product.price}</span></div>
-        <div class="cell">${item.amount}</div>
+
+
+        <div class="cell">
+
+        <div class="number-input quantity" data-id="${product.id}">
+                        <button class="btn btn-dec">-</button>
+                        <input class="quantity-result"
+                                        type="number" 
+                                        value="${item.amount}"
+                                        min="1"
+                                        max="10"
+                                        required 
+                                        />
+                        <button class="btn btn-inc">+</button>
+                    </div>
+        
+        
+        
+        
+        
+        </div>
+
+
+
         <div class="cell"><span class="product-subtotal price">0</span></div>
-        <div class="cell"><a href="#!" class="fas fa-trash-alt"></a></div>
+        <div class="cell"><a href="#!" data-id="${product.id}" class="fas fa-trash-alt"></a></div>
     </div>
     `;
 
@@ -247,6 +298,38 @@ function Cart(tax = 0.07, shipping = 0) {
         cart = [];
         this.saveCart();
     }
+
+    this.renderCart = function(shippingCartItems) {
+        this.setCartTotal(shippingCartItems)
+        shippingCartItems.addEventListener('click', event => {
+            if(event.target.classList.contains('fa-trash-alt')) {
+                cart = filterItem(cart, event.target.dataset.id);
+                this.setCartTotal(shippingCartItems)
+                this.saveCart();
+                event.target.closest('.cart-item').remove();
+            } else if (event.target.classList.contains('btn-inc')) {
+                let tmp = findItem(cart, event.target.closest('.quantity').dataset.id);
+                tmp.amount += 1;
+                console.log("tmp ", tmp)
+                event.target.previousElementSibling.value = tmp.amount;
+                this.setCartTotal(shippingCartItems)
+                this.saveCart();
+            }else if (event.target.classList.contains('btn-dec')) {
+                let tmp = findItem(cart, event.target.closest('.quantity').dataset.id);
+                if (tmp !== undefined && tmp.amount > 1){
+                    tmp.amount -= 1;
+                event.target.nextElementSibling.value = tmp.amount;
+                } else {
+                    cart = filterItem(cart, event.target.dataset.id);
+                    event.target.closest('.cart-item').remove();
+                }
+                this.setCartTotal(shippingCartItems)
+                this.saveCart();
+            }
+        })
+
+    }
+
 
 }
 
@@ -445,48 +528,79 @@ const renderShowOnly = (showOnly, products, productContainer) => {
 
 
 let shoppingCart =  new Cart();
-let productList = new ProductList(products);
+
 const cartAmount = document.getElementById('cart-amount');
 
 cartAmount.textContent = shoppingCart.totalAmount();
+
+async function fetchData(url) {
+    return await fetch(url, {
+        method: 'GET',
+        headers: {"Content-Type": "application/json"}
+    })
+    .then(response => {
+        if(response.status >= 400) {
+            return response.json().then(err => {
+                const error = new Error('Something went wrong!')
+                error.data = err
+                throw error
+            })
+        }
+        return response.json()
+    })
+}
+
+
 function main() {
+
+    const url = "https://my-json-server.typicode.com/couchjanus/db";
 
     const productContainer = document.querySelector('.product-container');
 
     if (productContainer) {
+        fetchData(`${url}/products`)
+        .then(products => {
+            let productList = new ProductList(products);
+            productContainer.innerHTML = productList.populateProductList(products);	
 
-    productContainer.innerHTML = productList.populateProductList(products);	
+            let productCards = productContainer.querySelectorAll('.product');
 
-    let productCards = productContainer.querySelectorAll('.product');
+            productCards.forEach(item => new CardProduct(productList, item));
 
-    productCards.forEach(item => new CardProduct(item));
+            const sidebar = document.getElementById('sidebar');
 
-    const sidebar = document.getElementById('sidebar');
+            if (sidebar) {
+                const categoryContainer = document.getElementById('category-container');
 
-    if (sidebar) {
-        const categoryContainer = document.getElementById('category-container');
-        populateCategories(categoryContainer, categories);
+                fetchData(`${url}/categories`)
+                .then(categories => {
 
-        renderCategory(productContainer, '#category-container', products)
+               
+                populateCategories(categoryContainer, categories);
 
+                renderCategory(productContainer, '#category-container', products)
+              })
+            }
+
+            const selectPicker = document.getElementById('selectpicker');
+            if (selectPicker) {
+                renderSelect(selectPicker, products, productContainer);
+            }
+
+            const showOnly = document.querySelector('.show-only');
+            if(showOnly) {
+                renderShowOnly(showOnly, products, productContainer);
+            }
+        });
     }
-
-    const selectPicker = document.getElementById('selectpicker');
-    if (selectPicker) {
-        renderSelect(selectPicker, products, productContainer);
-    }
-
-    const showOnly = document.querySelector('.show-only');
-    if(showOnly) {
-        renderShowOnly(showOnly, products, productContainer);
-    }
-}
 
     const cartPage = document.getElementById('cart-page');
     if(cartPage) {
         const shippingCartItems = cartPage.querySelector('.cart-main .table');
         shippingCartItems.innerHTML = shoppingCart.populateShoppingCart(products);
-        shoppingCart.setCartTotal(shippingCartItems);
+        shoppingCart.renderCart(shippingCartItems)
+
+        // shoppingCart.setCartTotal(shippingCartItems);
 
         let isAuth = auth => auth ?? false;
 
