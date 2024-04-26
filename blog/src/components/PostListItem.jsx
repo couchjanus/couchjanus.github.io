@@ -4,7 +4,6 @@ function PostListItem({item, user}) {
 
     const [post, setPost] = useState({});
     const [author, setAuthor] = useState({});
-
     const toDate = date => new Date(date);
 
     const fetchPost = () => {
@@ -14,20 +13,24 @@ function PostListItem({item, user}) {
 
     useEffect(() => {
         fetchPost()
-        // console.log(post)
+
     }, []);
 
     return (
-        <article>
-            <div>
-                <span>Comments: {post.numComments} </span>
-                <span>{toDate(post.datePublished).toDateString()}</span>
+        <article className='rounded overflow-hidden shadow-lg flex flex-col'>
+            
+            <div className='flex'>
+                <span className='flex-1'>Comments: {post.numComments} </span>
+                <span className='flex-1'>{toDate(post.datePublished).toDateString()}</span>
             </div>
-            <h2><a href="#">{post.title}</a></h2>
-            <div>
-                <img src={post.cover}  alt={post.title} />
+            
+            <a href="#" className='bg-indigo-600 px-4 py-2 text-white mt-3 mr-r hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out'>{post.title}</a>
+           
+            <div className='flex-initial w-62 max-w-62'>
+                <img className='w-62 h-62 block object-fit-cover' src={post.cover}  alt={post.title} />
                 <p>{post.content}</p>
             </div>
+            
             <div>
                 <span>Author: {author.firstName + " " + author.lastName} </span>
                 <a href="#">Read more</a>

@@ -1,18 +1,20 @@
-// import { useState } from 'react'
-
 import './App.css'
 
-
 import PostList  from './components/PostList';
+import Home from './pages/home';
+import ErrorPage from './pages/error'
+
+import About from './pages/about';
 
 function App() {
   return (
     <>
-      <h1>Vite + React</h1>
+      
+      {/* <PostList /> */}
 
-
-      <PostList />
-
+      <Home />
+      {/* <ErrorPage /> */}
+      {/* <About /> */}
     </>
   )
 }

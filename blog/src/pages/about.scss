@@ -1,0 +1,41 @@
+
+$bg-color: #ccc;
+$text-color: #000;
+$btn-width: 200px;
+$btn-height: 40px;
+$block-padding: 6rem;
+
+
+.head {
+    font-size:6em;
+    text-align:center;
+}
+
+@mixin v-list {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.wrapper {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: $block-padding;
+
+    &__btns {
+        @include v-list;
+        button {
+            width: $btn-width;
+            height: $btn-height;
+            color: white;
+        }
+    }
+}
+
+$colors: (red, blue, green);
+
+@for $i from 1 through 3 {
+    .btn#{$i} {
+        background-color: nth($colors, $i);
+    }
+}
