@@ -1,5 +1,6 @@
-import PostList  from '../components/PostList';
+
 import './home.css';
+import {Outlet, Link} from "react-router-dom";
 
 export default function Home() {
     return (
@@ -27,20 +28,20 @@ export default function Home() {
     <nav>
       <ul>
         <li>
-          <a href="#">Blog</a>
+=          <Link to={`blog`}>Blog</Link>     
         </li>
         <li>
-          <a href="#">About</a>     
+          <Link to={`about`}>About</Link>     
         </li>
         <li>
-          <a href="#">Contact</a>
+        <Link to={`contact`}>Contact</Link>     
         </li>
       </ul>
     </nav>
 </div>
 
 <div id="detail">
-      <PostList />
+      <Outlet />
 </div>
         </>
     )

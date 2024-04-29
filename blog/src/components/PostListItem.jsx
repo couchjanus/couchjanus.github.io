@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 
 function PostListItem({item, user}) {
 
@@ -33,7 +34,7 @@ function PostListItem({item, user}) {
             
             <div>
                 <span>Author: {author.firstName + " " + author.lastName} </span>
-                <a href="#">Read more</a>
+                <Link  to={`/post/${post.id}`} class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Read&nbsp;more</Link>
             </div>
 
         </article>
