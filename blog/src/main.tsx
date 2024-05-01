@@ -7,6 +7,8 @@ import ErrorPage from './pages/error';
 import About from './pages/about';
 import Blog  from './pages/blog';
 import ShowPost, {loader as postLoader} from "./pages/show";
+import Chat from './pages/chat';
+
 import './index.css'
 import {
   createBrowserRouter, 
@@ -33,10 +35,15 @@ const router = createBrowserRouter([
       element: <Blog />
     },
     {
+      path: "chat",
+      element: <Chat />
+    },
+    {
       path: "post/:postId",
       element: <ShowPost />,
       loader: postLoader,
     },
+
   ]
 },
 ]);
